@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="../unit-4-game/assests/javascript/game.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title>Crystal Collector</title>
+</head>
+
+<body>
+    <h1 class="col-lg-12">Crystal Collector</h1>
+    <div class="col-lg-6">
+        <p>You will be given a random number at the start of the game.</p>
+        <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
+            total score.</p>
+        <p>You win the game by matching your total score to the random number. You lose the game if your total score
+            goes above the random number.</p>
+        <p>The value of each crystal is hidden from you until you click on it.</p>
+        <p>Each time when the game starts, the game will change the values of each crystal.</p>
+    </div>
+    <div id="col-lg-6">
+        <h1><span id="Randomnumber"></span></h1>
+    </div id="images">
+    <!-- <img class="crystal-image1" src="../unit-4-game/assests/images/blue-gem.png">
+    <img class="crystal-image2" src="../unit-4-game/assests/images/green-gem.png">
+    <img class="crystal-image3" src="../unit-4-game/assests/images/pink-gem.png"> -->
+
+
+    </div>
+
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+
+        var possiblenum = [10, 31, 11]
+        var random = possiblenum[Math.floor(Math.random())]
+        var targetnum = [Math.floor(Math.random() *100)];
+        var score = 0;
+        console.log(targetnum)
+
+        $("#Randomnumber").text(targetnum)
+
+        for (let i = 0; i < possiblenum.length; i++) {
+            var crystalimg = $("<img>");
+            crystalimg.addClass("crystal-image");
+            crystalimg.attr("src","../unit-4-game/assests/images/blue-gem.png");
+            crystalimg.attr("src","../unit-4-game/assests/images/green-gem.png");
+            crystalimg.attr("src","../unit-4-game/assests/images/pink-gem.png")
+            crystalimg.attr("data-value", possiblenum[i]);
+            $("#images").append(crystalimg);
+        }
+        $(".crystal-image").on("click", function() {
+            var crystalval = ($(this).attr("data-value"));
+            score += crystalval;
+            alert("New Score: " + score);
+            if (score === targetnum) {
+                alert("You win!");
+            } else if (score > targetnum) {
+                alert("You lose, IDIOT!")
+            }
+        })
+// put images in the html file
+//give a class
+//randomly assign numbers in jquery        
+
+    </script>
+
+</body>
+
+</html>
