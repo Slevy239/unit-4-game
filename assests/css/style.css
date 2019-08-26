@@ -1,0 +1,24 @@
+h1 {
+    text-align: center;
+}
+.jumbotron {
+    padding: 1rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+}
+p {
+    text-align: center;
+}
+body {
+    background-image: url(../images/green-valley-background_22191-40.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+
+.crystal-image {
+    width: 275px;
+    height: 275px;
+    margin-left: 75px
+}
