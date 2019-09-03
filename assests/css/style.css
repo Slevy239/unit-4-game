@@ -11,14 +11,14 @@ p {
     text-align: center;
 }
 body {
-    background-image: url(../images/green-valley-background_22191-40.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
+    /* background-image: url(../images/green-valley-background_22191-40.jpg); */
+     background-repeat: no-repeat; 
+    background-size: cover;
   }
 
 
 .crystal-image {
-    width: 275px;
-    height: 275px;
+    width: 200px;
+    height: 200px;
     margin-left: 75px
 }
