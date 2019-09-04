@@ -1,11 +1,17 @@
 $(document).ready(function game() {
     var possiblenum = [1, 5, 10, 25]
     var img = ["../unit-4-game/assests/images/blue-gem.png", "../unit-4-game/assests/images/green-gem.png", "../unit-4-game/assests/images/pink-gem.png", "../unit-4-game/assests/images/rock.jpg"]
-    var targetnum = [Math.floor(Math.random() * 150)];
-    var score = 0;
     var wins = 0;
     var loss = 0;
+    var targetnum = [Math.floor(Math.random() * 150)];
+    var score = 0;
 
+   
+   
+    function reset() {
+    targetnum = [Math.floor(Math.random() * 150)];
+    score = 0;
+    }
 
     $("#Randomnumber").text("Number to Guess: " + targetnum);
 
@@ -25,12 +31,12 @@ $(document).ready(function game() {
         if (newScore === targetnum) {
             wins++;
             $("#wins").html("Wins: " + wins);
-            reset ();
+            reset();
         }
         else if (newScore > targetnum) {
             loss++;
             $("#loss").html("Losses: " + loss);
-            reset ();
+            reset();
         }
     })
 })
