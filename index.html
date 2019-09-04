@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../unit-4-game/assests/css/style.css">
-    <script src="../unit-4-game/assests/javascript/game.js"></script>
-
+    <!-- <link rel="stylesheet" href="../unit-4-game/assests/css/reset.css"> -->
+    
     <title>Crystal Collector</title>
 </head>
 
@@ -24,97 +24,54 @@
                         to
                         your
                         total score.</p>
-                    <p>You win the game by matching your total score to the random number. You lose the game if your
-                        total
-                        score
-                        goes above the random number.</p>
-                    <p>The value of each crystal is hidden from you until you click on it.</p>
-                    <p>Each time when the game starts, the game will change the values of each crystal.</p>
+                        <p>You win the game by matching your total score to the random number. You lose the game if your
+                            total
+                            score
+                            goes above the random number.</p>
+                            <p>The value of each crystal is hidden from you until you click on it.</p>
+                            <p>Each time when the game starts, the game will change the values of each crystal.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="container">
+                <div class="row">
+            <h2><span id="Randomnumber"></span></h2>
         </div>
     </div>
     <div class="container">
-    <div class="row">
-            <h2>Number to Guess: <span id="Randomnumber"></span></h2>
-            <h2>Currenct Score: <span id="score"></span></h2>
-            <h2>Wins: <span id="wins"></span></h2>
-            <h2>Losses: <span id="loss"></span></h2>
-            <div id="images">
-            </div>
+        <div class="row">
+            
+            <h2><span id="score"></span></h2>
         </div>
+    </div>
 
+    <div class="container">
+        <div class="row">
+            
+            <h2><span id="wins"></span></h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            
+            <h2><span id="loss"></span></h2>
+        </div>
+    </div>
+<div class="conainter">
+    <div class="row">
+        <div id="images" class="col-lg-12">
+    </div>
+</div>
+    </div>
 
-
+    
+    
+    
+    
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script>
-        $(document).ready(function game() {
-            var possiblenum = [10, 31, 69]
-            var img = ["../unit-4-game/assests/images/blue-gem.png", "../unit-4-game/assests/images/green-gem.png", "../unit-4-game/assests/images/pink-gem.png"]
-            var targetnum = [Math.floor(Math.random() * 150)];
-            var score = 0;
-            var wins = 0;
-            var loss = 0;
-
-
-            // function reset() {
-            $("#Randomnumber").text(targetnum);
-
-            for (var i = 0; i < possiblenum.length; i++) {
-                var crystalimg = $("<img>");
-                crystalimg.addClass("crystal-image");
-                crystalimg.attr("src", img[i]);
-                crystalimg.attr("id", "col-lg-3");
-                crystalimg.attr("data-crystalvalue", possiblenum[i]);
-                $("#images").append(crystalimg);
-            }
-            $(".crystal-image").on("click", function () {
-                var crystalvalue = parseInt($(this).attr("data-crystalvalue"));
-               var newScore = parseInt(score += crystalvalue);
-                $("#score").html(newScore);
-
-                if (newScore === targetnum) {
-                    wins++;
-                    parseInt($("#wins").html(newScore));
-                    // reset();
-                }
-                else if (newScore >= targetnum) {
-                    loss++;
-                    parseInt($("#loss").html(loss));
-                    // reset();
-                }
-            })
-            })
-
-
-
-    //         $("img").on("click", function () {
-	// 	var newScore = score += parseInt($(this).attr("value")); 
-	// 		console.log("New Score: " + newScore); 
-	// 	$("#Randomnumber").html(newScore); 
-
-	// 	if(newScore === compPick) { 
-	// 		wins++ ; 
-	// 		$("#wins").html("Wins: " + wins); 
-	// 			console.log("Wins: " + wins); 
-	// 			reset(); 
-	// 	} 
-
-	// 	else if(newScore > compPick) {
-	// 		losses++ ; 
-	// 		$("#losses").html("Losses: " + loss); 
-	// 			console.log("Losses: " + loss); 
-	// 			reset(); 
-	// 	}
-
-	// }); 
-    //     })
-
-
-        
-
-    </script>
+    <script src="../unit-4-game/assests/javascript/game.js"></script>
+    
 
 </body>
 
